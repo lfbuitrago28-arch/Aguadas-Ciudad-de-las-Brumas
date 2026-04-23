@@ -23,13 +23,29 @@
             box-sizing: border-box;
         }
 
-       body {
+    body {
     font-family: 'Outfit', sans-serif;
     background: linear-gradient(135deg, var(--verde-profundo) 0%, var(--verde-bosque) 50%, var(--verde-esmeralda) 100%);
     min-height: 100vh;
-    /* Quitamos el flex para que el contenido pueda crecer hacia abajo */
-    padding: 40px 0;
-    overflow-y: auto; /* Esto permite que aparezca la barra para bajar */
+    /* CAMBIOS PARA AJUSTAR LA PÁGINA: */
+    display: block;          /* Permite que el contenido fluya hacia abajo */
+    overflow-y: auto;        /* Habilita la barra de bajar/subir */
+    overflow-x: hidden;      /* Evita que se mueva de lado a lado */
+    padding: 40px 10px;      /* Espacio para que no toque los bordes en el celular */
+}
+
+/* Añade esto justo debajo del body para que los botones se ajusten solos */
+.container {
+    width: 95%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .grid-botones {
+        grid-template-columns: 1fr !important; /* Pone los botones uno debajo de otro en celular */
+        gap: 15px;
+    }
 }
 
         /* Animated background elements */
